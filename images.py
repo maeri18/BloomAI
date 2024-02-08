@@ -1,41 +1,40 @@
-from flask import Flask, render_template, send_file
-from PIL import Image
-import random
-import math
-import generate
+import sys
+import os
+parent = os.path.dirname(__file__)
+mod = os.path.join(parent, "generate")
+sys.path.append(mod)
+from flask import Flask, render_template 
+from generate.generate_from_saved_cpu import *
+from generate.generate_gif import *
+from generate.drawing import *
+import threading
 
 app = Flask(__name__)
  
-#@app.route('/')
-#def home():
- #   return render_template('image_render.html')
 @app.route('/')
 def home():
     return render_template('image_render.html')
 
 @app.route('/generate')
-def generate():
-    width = 556
-    height =556
-    randID:int =math.floor(random.random()*900)
-    my_list:list[int] = []
-    b1 = math.floor(random.random()*255)
-    b2 = math.floor(random.random()*255)    
-    for i in range(width):
-        for j in range(height):
-            if  j < b1 and i > b1:
-                my_list.append((math.floor(random.random()*255),math.floor(random.random()*10),math.floor(random.random()*20)))
-            elif j < b2 and i < b2:
-                my_list.append((math.floor(random.random()*20),math.floor(random.random()*10),math.floor(random.random()*255)))
-            elif i< b1:
-                my_list.append((math.floor(random.random()*15),math.floor(random.random()*255),math.floor(random.random()*20)))
-            else :
-                 my_list.append((math.floor(random.random()*255),math.floor(random.random()*255),math.floor(random.random()*20)))
+def generate(): 
+    generate_ID()
+    return render_template('image_render_gen.html', genID = "./static/Images/ID.png")
 
-    img = Image.new('RGB', (width, height))
-    img.putdata(my_list)
-    img.save('/home/maeri_n/Flask_images/static/Images/ID.png')
-    return send_file('./static/Images/ID.png')
+@app.route('/prev')
+def prev():
+    return render_template('image_render_prev.html', prevID = "./static/Images/ID.png")
+
+@app.route('/gif')
+def gif():
+    #generate_gif()
+    return render_template('image_render_gif.html', gifID = "./static/Images/gif.gif")
+
+@app.route('/drawing')
+def drawing_gen():
+    drawing()
+    return render_template('image_render_draw.html', drawingID = "./static/Images/drawingID.png")
 
 if __name__ == '__main__':
+    import socket
+    socket.setdefaulttimeout(30)
     app.run(debug=True, port=9000)

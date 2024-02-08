@@ -1,0 +1,113 @@
+body{
+    background-image: url("../Images/OIG1.jpeg");
+    background-color: #060a16;
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#welcome{
+   overflow:hidden;
+   width:100%;
+   height:300px;
+   position: relative;
+}
+h1{
+    color: #FFF6E9;
+    font-size:3vw;
+    position: relative;
+    font-weight:400;
+    margin: auto;
+    width: 50%;
+    font-family: Verdana, Geneva,Tahoma, sans-serif;
+}
+main > ul{
+    width:100%;
+    margin: auto;    
+}
+main > ul > li {
+    float:left;
+    /*margin-right: 3em ;
+    margin-left: auto;*/
+    width:33%;
+    height: 30em;
+    margin: auto;
+    display: inline-block;
+}
+a{
+    margin: auto;
+    display: inline-block;
+}
+main {
+    background-color:rgb(249,187,225,0.75);
+    height: 300em;
+    width:100%;
+    padding: 0px;
+    margin:auto;
+}
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#generate{
+    background-image: url("../Images/ID - Copie.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*width : 80em;
+    height: 80em;*/
+    margin: 1%;
+}
+#gif{
+    background-image: url("../Images/gif - Copie.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 1%;
+}
+#drawing{
+    background-image: url("../Images/drawingID - Copie (2).png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 1%;
+}
+.generate-boxes{
+    max-width: 600%;
+    width : 23vw;
+    height: 23vw;
+    font-size: 1.5vw;  
+    color: #241468;
+    text-decoration: none;
+}
+.generate-boxes span{
+    background-color: rgb(234,17,121,0.85);
+    display: inline-block;
+    width: 100%;
+}
+#prev{
+    clear: both;
+    width : 23vw;
+    height: 23vw;
+    font-size: 1.5vw;  
+    color: #241468;
+}
+#prev a{
+    position:relative;
+    top:20vw;
+}
+div a{
+    clear: both;
+    width : 23vw;
+    height: 23vw;
+    font-size: 1.5vw;  
+    color: #241468;
+    position:relative;
+    top:10vw;
+}
+p{
+    clear: both;
+    font-size: 1.5vw;  
+    color: #241468;
+}
+#new{
+    height:20vw;
+    width:20vw;
+}

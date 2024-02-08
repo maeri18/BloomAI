@@ -2,34 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rendering Local Images Using Flask</title>
+    <title>BloomAI</title>
+    <link href="../static/styles_and_script/styles.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-    
-<a href="/generate"><button id="generate">Generate an image</button></a>
-<div id="xxx"></div>
-<script>
-    let clicked = false;
-    let generate = document.getElementById("generate");
-    /*
-    generate.addEventListener("click",function(event){
-        //const d = new Date();
-        //let randID = d.getTime();
-        paragraph = document.createElement("p");
-        paragraph.innerText ="processing...";
-        document.body.append(paragraph);
-        
-        
-        //const v = document.getElementById("xxx");
-        //v.innerHTML = "<div>Hello!</div>";     
-    });  */
-     
-        
-    
-    
-</script>
+<body>    
+<div id="welcome"><h1>Welcome to BloomAI</h1></div>
+<main>
+<ul>
+    <li >
+        <a href="/generate" class= "generate-boxes" id="generate"><span>Click to generate an image</span> </a>
+    </li>
+    <li>
+        <a href="/gif" class= "generate-boxes"  id="gif"><span>Click to generate a GIF</span></a>
+    </li>
+    <li >
+        <a href="/drawing" class= "generate-boxes" id="drawing" ><span>Drawing mode</span></a>
+    </li>
+</ul>
+<div id="prev"><a href="/prev">See the last generated image</a></div>
 
+</main>
 
+<script src="../static/styles_and_script/script.js"></script>
+   
     
 </body>
 </html>
